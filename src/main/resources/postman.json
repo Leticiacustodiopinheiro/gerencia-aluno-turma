@@ -1,0 +1,302 @@
+{
+    "info": {
+        "_postman_id": "07f90fd7-8dbb-479e-b77d-0af867fb52c6",
+        "name": "estudos_springboot",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"    },
+    "item": [
+        {
+            "name": "inserir-aluno",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"nome\":\"Leticia custodio pinheiro\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/inserir-aluno",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "inserir-aluno"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "inserir-turma",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"nome\":\"Turma 2\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/inserir-turma",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "inserir-turma"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "inserir-aluno-turma",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"idTurma\":\"2\",\n\t\"idAluno\":\"1\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/inserir-aluno-turma",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "inserir-aluno-turma"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "excluir-aluno-turma",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n\t\"idTurma\":\"1\",\n\t\"idAluno\":\"1\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/excluir-aluno-turma",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "excluir-aluno-turma"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "excluir-aluno/{id}",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/excluir-aluno/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "excluir-aluno",
+                        "1"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "excluir-turma/{id}",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/excluir-turma/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "excluir-turma",
+                        "1"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "listar-aluno-turma/{id}",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/listar-aluno-turma/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "listar-aluno-turma",
+                        "1"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "listar-aluno",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/listar-aluno",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "listar-aluno"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "listar-aluno-paginacao/{pag}/{qtde}/{ordenacao}",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/listar-aluno-paginacao/0/5/id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "listar-aluno-paginacao",
+                        "0",
+                        "5",
+                        "id"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "listar-turma",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"                    }
+                ],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/listar-turma",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "listar-turma"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "atualizar-aluno",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1,\n    \"nome\": \"Atualiza nome teste\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/atualizar-aluno",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "atualizar-aluno"                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "atualizar-turma",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1,\n    \"nome\": \"Turma 1 atualizar\"\n}"                },
+                "url": {
+                    "raw": "http://localhost:8080/api/atualizar-turma",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "atualizar-turma"                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

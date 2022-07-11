@@ -1,0 +1,60 @@
+openapi: 3.0.1info:  title: API Aluno e Turma
+  description: API para controlar Aluno e Turma.
+  version: 0.0.1  termsOfService: http://localhost:8080/api
+  contact:   name: Leticia Custodio Pinheiro
+   email: leticia.custodio10@hotmail.com
+servers: - url: http://localhost:8080/api
+  description: API Aluno e Turma
+paths:   /listar-aluno:    get:      summary: Listar Aluno
+      responses:       200:         description: Sucesso
+         content:          application/json:            schema:              type: array
+              items:                $ref: "#/components/schemas/Objeto"   /listar-aluno-turma/{id}:    get:      summary: Listar Aluno Turma pelo Id do Aluno
+      parameters:      - name: id
+        in: path
+        schema:          type: integer
+        required: true      responses:       200:         description: Sucesso
+         content:          application/json:            schema:              type: array
+              items:                $ref: "#/components/schemas/Objeto"       404:        description: Aluno nao encontrado
+        content:          application/json:            example: "Not Found"   /inserir-aluno:      post:        summary: Incluir um aluno.
+        requestBody:          content:            application/json:              schema:                $ref: "#/components/schemas/Objeto"        responses:          201:            description: "Sucesso"   /inserir-turma:      post:        summary: Incluir um Turma.
+        requestBody:          content:            application/json:              schema:                $ref: "#/components/schemas/Objeto"        responses:          201:            description: "Sucesso"   /inserir-aluno-turma:      post:        summary: Incluir em uma turma.
+        requestBody:          content:            application/json:              schema:                type: object
+                properties:                  idTurma:                    type: integer
+                  idAluno:                    type: integer
+        responses:          200:            description: "Sucesso"   /excluir-aluno-turma:      post:        summary: Excluir Aluno em uma turma.
+        requestBody:          content:            application/json:              schema:                type: object
+                properties:                  idTurma:                    type: integer
+                  idAluno:                    type: integer
+        responses:          200:            description: "Sucesso"   /excluir-aluno/{id}:    delete:      summary: Excluir Aluno
+      parameters:      - name: id
+        in: path
+        schema:          type: integer
+        required: true      responses:       200:         description: Sucesso
+       404:        description: Aluno nao encontrado
+        content:          application/json:            example: "Not Found"   /excluir-turma/{id}:    delete:      summary: Excluir Turma
+      parameters:      - name: id
+        in: path
+        schema:          type: integer
+        required: true      responses:       200:         description: Sucesso
+       404:        description: Turma nao encontrado
+        content:          application/json:            example: "Not Found"   /listar-turma:    get:      summary: Listar Turma
+      responses:       200:         description: Sucesso
+         content:          application/json:            schema:              type: array
+              items:                $ref: "#/components/schemas/Objeto"   /listar-aluno-paginacao/{pag}/{qtde}/{ordenacao}:    get:      summary: Listar Aluno com paginacao
+      parameters:      - name: pag
+        in: path
+        schema:          type: integer
+        required: true      - name: qtde
+        in: path
+        schema:          type: integer
+        required: true      - name: ordenacao
+        in: path
+        schema:          type: string
+        required: true      responses:       200:         description: Sucesso
+         content:          application/json:            schema:              type: array
+              items:                $ref: "#/components/schemas/Objeto"       404:        description: nenhum aluno encontrado
+        content:          application/json:            example: "Not Found"   /atualizar-aluno:      put:        summary: Atualizar aluno.
+        requestBody:          content:            application/json:              schema:                $ref: "#/components/schemas/Objeto"        responses:          200:            description: "Sucesso"   /atualizar-turma:      put:        summary: Atualizar Turma.
+        requestBody:          content:            application/json:              schema:                $ref: "#/components/schemas/Objeto"        responses:          200:            description: "Sucesso"components:  schemas:    Objeto:      type: object
+      properties:        id:          type: integer
+        nome:          type: string
